@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    image: aci606-api:v1
+    ports:
+      - "8000:8000"
+    environment:
+      APP_VERSION: "v1-compose"
+      APP_MESSAGE: "Started with Docker Compose"
+      DATA_DIR: "/data"
+    volumes:
+      - api_data:/data
+
+volumes:
+ api_data:
